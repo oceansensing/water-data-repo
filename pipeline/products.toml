@@ -1,0 +1,56 @@
+# What this repository publishes: the world's lakes and the Americas' rivers — HydroLAKES v1.0 (every
+# lake and reservoir of ten hectares and more, with its depth, volume and elevation) and HydroSHEDS
+# v2's streams of North and South America (every stream draining a square kilometer and more, with
+# its Strahler order and upstream area) — each as a pyramid of vector tiles,
+# `map/land/<product>/index.json` beside `map/land/<product>/<version>/<z>/<x>/<y>.pbf`, and a root
+# naming its version. The fetchers are the site's `scripts/fetch-hydrolakes.py` and
+# `scripts/fetch-hydrosheds-rivers.py` (on `scripts/land_tiles.py`), whose docstrings carry the
+# measurements.
+#
+# **To the second host alone** (`r2_only`, the site pipeline's D13, its note of 2026-10-09): every
+# file of these products is published to Cloudflare R2 and not to Pages, which carries the status
+# alone. The roots stay on the `published` branch; **the tiles are each product's `trees`**,
+# carried from run to run by this repository's cache, never committed.
+#
+# **Static, rebuilt only when a source changes**: both are released files, HydroLAKES unchanged
+# since 2016 and HydroSHEDS v2 as each continent comes. Each step looks at its files every 30 days
+# (`every_hours`), and is made due when its cache missed; the rivers' files are also looked at by the
+# workflow's plan each day (two requests), which builds the job matrix only when one moved or the
+# cache lost the set. Neither has a budget: an old `refTime` is the source's own date, not a fault.
+
+[contract]
+check = ["node", "scripts/test-schema.mjs"]
+roots = ["node", "scripts/test-schema.mjs", "--roots"]
+
+[defaults]
+timeout_minutes = 20
+
+[steps.lakes]
+cmd = ["python3", "scripts/fetch-hydrolakes.py", "--only=lakes"]
+lane = "data.hydrosheds.org"
+timeout_minutes = 150
+every_hours = 720
+
+[steps.rivers]
+cmd = ["python3", "scripts/fetch-hydrosheds-rivers.py", "--only=rivers"]
+lane = "data.hydrosheds.org"
+timeout_minutes = 60
+every_hours = 720
+
+[products.lakes]
+title = "Lakes: HydroLAKES v1.0, every lake and reservoir of 10 ha and more, with its depth, volume and elevation (HydroSHEDS)"
+step = "lakes"
+roots = ["lakes.json"]
+writes = ["lakes.json"]
+trees = ["land/lakes"]
+namespace = ["python3", "scripts/fetch-hydrolakes.py", "--namespace", "--only=lakes"]
+r2_only = true
+
+[products.rivers]
+title = "Rivers: HydroSHEDS v2's streams of North and South America, every stream of 1 km\u00b2 and more, with its Strahler order and upstream area (HydroSHEDS)"
+step = "rivers"
+roots = ["rivers.json"]
+writes = ["rivers.json"]
+trees = ["land/rivers"]
+namespace = ["python3", "scripts/fetch-hydrosheds-rivers.py", "--namespace", "--only=rivers"]
+r2_only = true
