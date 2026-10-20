@@ -3,7 +3,7 @@
 The world's **lakes** and the Americas' **rivers**, as vector tiles: a data repository of the oceansensing ocean map system, with its own
 Pages site, its own schedule and its own gigabyte, and no code of its own.
 
-**Nothing is published yet.** `PLAN.md` is the founding plan; `CLAUDE.md` carries what must not be
+**Publishing since 2026-10-20**, daily at 08:29 UTC. `PLAN.md` is the founding plan; `CLAUDE.md` carries what must not be
 got wrong and the shared doc doctrine.
 
 ## What it publishes

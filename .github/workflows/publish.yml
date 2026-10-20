@@ -20,8 +20,8 @@ on:
         description: 'Rebuild even if the probe says the tree is current'
         type: boolean
         default: false
-  # schedule:
-  #   - cron: '29 8 * * *'
+  schedule:
+    - cron: '29 8 * * *'
 
 permissions: {}
 

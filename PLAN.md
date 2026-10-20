@@ -11,8 +11,10 @@ Two products, each a pyramid of Mapbox vector tiles (uncompressed, extent 4096, 
 
 **HydroLAKES v1.0** (2016; the polygons' file geodatabase, `HydroLAKES_polys_v10.gdb.zip`, from data.hydrosheds.org) and **HydroSHEDS v2**'s river network (RIV, 1 arc-second, released for North and South America 2026-07-07; `<continent>_RIV_1s_v2r0.gdb.zip`), HydroLAKES by Mathis Messager, Bernhard Lehner and colleagues (McGill University), HydroSHEDS v2 by Bernhard Lehner and colleagues (its technical documentation prepared on behalf of Confluvio Inc.; its elevation DLR's TanDEM-X). Both are **CC BY 4.0**; notwithstanding the free license, the authors ask that the data not be redistributed in whole in its original format on other websites without their written permission — these tiles are neither the whole data set nor its format, and the original files are never published here. HydroSHEDS v2 carries no discharge. Citations: Messager, M.L., Lehner, B., Grill, G., Nedeva, I., Schmitt, O. (2016): Estimating the volume and age of water stored in global lakes using a geo-statistical approach. Nature Communications 7: 13603, https://doi.org/10.1038/ncomms13603; Lehner, B., Roth, A., Huber, M., Anand, M., Thieme, M. (2022): A sharper look at the world's rivers and catchments. Eos 103, https://doi.org/10.1029/2022EO220167; https://www.hydrosheds.org. The data are provided as is, without warranty. Terms read 2026-10-20.
 
+## 2026-10-20: the first run, and the schedule
+
+The first dispatched run (`39403478570`): the rivers' nine parts joined and the lakes built, green. Its R2 job's first upload of every tile — 523,263 files, at about 27 a second — ran out its 330 minutes at 17:16 UTC, and a re-run sent them all again: a first publish recorded its tagging only once it landed, so one cut short read as an untagged bucket. The site's R2 publish has recorded it before sending anything since 19:30 UTC, and the run's third attempt (19:31–19:50 UTC) sent the 12 files left: 523,265 files, `lakes` and `rivers` R2's alone. The schedule set then: daily at 08:29 UTC.
+
 ## Open
 
-1. The first dispatched run, read: the rivers' matrix and join, the lakes' build, both products fresh, R2 alone — and its R2 job's time for the first upload of every tile.
-2. Then the daily schedule.
-3. HydroSHEDS v2's next continents, as they are released: a continent is a file name, its box, its landmark and its groups in the fetcher.
+1. HydroSHEDS v2's next continents, as they are released: a continent is a file name, its box, its landmark and its groups in the fetcher.
