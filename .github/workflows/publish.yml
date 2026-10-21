@@ -196,6 +196,7 @@ jobs:
           path: site/public/map/land/lakes
           key: water-lakes-${{ needs.plan-water.outputs.lakes-version }}
       - name: Restore the rivers' tiles
+        id: rivers-tiles
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: site/public/map/land/rivers
@@ -221,6 +222,8 @@ jobs:
           PIPELINE_DUE_NOW: ${{ format('{0},{1}', steps.lakes-tiles.outputs.cache-hit != 'true' && 'lakes' || '', needs.plan-water.outputs.rivers-build == 'true' && 'rivers' || '') }}
         run: python3 site/pipeline/orchestrate.py run
       # A set this run built is saved under its own version, for the next run to restore.
+      # And so is a set its restore missed: else every run after the cache was evicted would miss it
+      # again and build it again.
       - name: Name the sets on the stage
         id: sets
         if: always()
@@ -230,13 +233,13 @@ jobs:
             echo "$p=$v" >> "$GITHUB_OUTPUT"
           done
       - name: Save the lakes' tiles
-        if: steps.run.outputs.deploy == 'true' && steps.sets.outputs.lakes != 'none' && steps.sets.outputs.lakes != needs.plan-water.outputs.lakes-version
+        if: steps.run.outputs.deploy == 'true' && steps.sets.outputs.lakes != 'none' && (steps.sets.outputs.lakes != needs.plan-water.outputs.lakes-version || steps.lakes-tiles.outputs.cache-hit != 'true')
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: site/public/map/land/lakes
           key: water-lakes-${{ steps.sets.outputs.lakes }}
       - name: Save the rivers' tiles
-        if: steps.run.outputs.deploy == 'true' && steps.sets.outputs.rivers != 'none' && steps.sets.outputs.rivers != needs.plan-water.outputs.rivers-version
+        if: steps.run.outputs.deploy == 'true' && steps.sets.outputs.rivers != 'none' && (steps.sets.outputs.rivers != needs.plan-water.outputs.rivers-version || steps.rivers-tiles.outputs.cache-hit != 'true')
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: site/public/map/land/rivers
