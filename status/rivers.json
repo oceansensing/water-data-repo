@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "product": "rivers",
+ "title": "Rivers: HydroSHEDS v2's streams of North and South America, every stream of 1 km\u00b2 and more, with its Strahler order and upstream area (HydroSHEDS)",
+ "fate": "carried",
+ "reason": "not due: checked 93.3 h ago, runs every 720 h",
+ "checked": "2026-10-20T11:28:17Z",
+ "updated": "2026-10-20T11:28:17Z",
+ "hour": "2026-07-06T20:12:12Z",
+ "modelRun": null,
+ "source": "HydroSHEDS v2 (Lehner et al. 2022), RIV_STREAMS at 1 arc-second: every stream draining 1 km\u00b2 and more, North and South America",
+ "hours": [
+  "2026-07-06T20:12:12Z"
+ ],
+ "files": {
+  "rivers.json": {
+   "bytes": 2954,
+   "sha256": "58d2b44e804c5cac8edb705e1fa0cb803399f51d69ce4ac38b0fd6c525aac3d1"
+  }
+ },
+ "trees": {
+  "land/rivers": "012987d776c7"
+ }
+}

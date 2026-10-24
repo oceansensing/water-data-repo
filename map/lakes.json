@@ -1,0 +1,75 @@
+{
+ "product": "lakes",
+ "header": {
+  "refTime": "2016-12-13T07:03:40Z",
+  "source": "HydroLAKES v1.0 (Messager et al. 2016), HydroSHEDS: the polygons of every lake and reservoir of 10 ha and more, with their depth, volume and elevation"
+ },
+ "index": "land/lakes/index.json",
+ "version": "27929d7b66fc",
+ "generated": "2026-10-20T11:26:28Z",
+ "citation": "Messager, M.L., Lehner, B., Grill, G., Nedeva, I., Schmitt, O. (2016): Estimating the volume and age of water stored in global lakes using a geo-statistical approach. Nature Communications 7: 13603, https://doi.org/10.1038/ncomms13603. Data: https://www.hydrosheds.org (CC BY 4.0)",
+ "sourceKey": {
+  "file": "HydroLAKES_polys_v10.gdb.zip",
+  "size": 762519774,
+  "fileId": "4_z2dd0aced54377d2670d40d12_f2049373570908173_d20220410_m201859_c000_v0001057_t0050_u01649621939913",
+  "uploaded": "1649621939913"
+ },
+ "features": {
+  "total": 1427688,
+  "byBand": {
+   "2-3": 178,
+   "4-5": 1708,
+   "6-7": 16689,
+   "8-10": 1427688
+  },
+  "byZoom": {
+   "2": 196,
+   "3": 202,
+   "4": 1889,
+   "5": 2022,
+   "6": 18992,
+   "7": 20325,
+   "8": 1561930,
+   "9": 1605518,
+   "10": 1697555
+  }
+ },
+ "tiles": {
+  "count": 167407,
+  "bytes": 634603801,
+  "byZoom": {
+   "2": 11,
+   "3": 24,
+   "4": 87,
+   "5": 237,
+   "6": 923,
+   "7": 2480,
+   "8": 12948,
+   "9": 39434,
+   "10": 111263
+  },
+  "largest": {
+   "bytes": 522125,
+   "tile": "6/19/20"
+  }
+ },
+ "controls": {
+  "landmarks": {
+   "Caspian Sea": 377003.3,
+   "Superior": 81844.2,
+   "Baikal": 31968.0,
+   "Titicaca": 8002.5,
+   "Dead Sea": 643.2
+  },
+  "medianAreaKm2": 0.24
+ },
+ "seconds": {
+  "bands": {
+   "2-3": 29,
+   "4-5": 73,
+   "6-7": 166,
+   "8-10": 3143
+  },
+  "total": 3453
+ }
+}
