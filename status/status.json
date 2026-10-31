@@ -1,0 +1,58 @@
+{
+ "schema": 2,
+ "contract": 1,
+ "generated": "2026-10-31T08:37:58Z",
+ "mode": "full",
+ "run": {
+  "id": "41185149232",
+  "url": "https://github.com/oceansensing/water-data-repo/actions/runs/41185149232"
+ },
+ "schedule": {
+  "crons": [
+   "29 8 * * *"
+  ],
+  "longestGapHours": 24.0
+ },
+ "products": {
+  "lakes": {
+   "title": "Lakes: HydroLAKES v1.0, every lake and reservoir of 10 ha and more, with its depth, volume and elevation (HydroSHEDS)",
+   "roots": [
+    "lakes.json"
+   ],
+   "fate": "carried",
+   "reason": "not due: checked 261.2 h ago, runs every 720 h",
+   "checked": "2026-10-20T11:28:17Z",
+   "updated": "2026-10-20T11:28:17Z",
+   "hour": "2016-12-13T07:03:40Z",
+   "modelRun": null,
+   "source": "HydroLAKES v1.0 (Messager et al. 2016), HydroSHEDS: the polygons of every lake and reservoir of 10 ha and more, with their depth, volume and elevation",
+   "hours": [
+    "2016-12-13T07:03:40Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 86617.57,
+   "nearestOffsetHours": 86617.57
+  },
+  "rivers": {
+   "title": "Rivers: HydroSHEDS v2's streams of North and South America, every stream of 1 km\u00b2 and more, with its Strahler order and upstream area (HydroSHEDS)",
+   "roots": [
+    "rivers.json"
+   ],
+   "fate": "carried",
+   "reason": "not due: checked 261.2 h ago, runs every 720 h",
+   "checked": "2026-10-20T11:28:17Z",
+   "updated": "2026-10-20T11:28:17Z",
+   "hour": "2026-07-06T20:12:12Z",
+   "modelRun": null,
+   "source": "HydroSHEDS v2 (Lehner et al. 2022), RIV_STREAMS at 1 arc-second: every stream draining 1 km\u00b2 and more, North and South America",
+   "hours": [
+    "2026-07-06T20:12:12Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 2796.43,
+   "nearestOffsetHours": 2796.43
+  }
+ }
+}
