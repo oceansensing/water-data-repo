@@ -1,0 +1,151 @@
+{
+ "product": "rivers",
+ "header": {
+  "refTime": "2026-07-06T20:12:12Z",
+  "source": "HydroSHEDS v2 (Lehner et al. 2022), RIV_STREAMS at 1 arc-second: every stream draining 1 km\u00b2 and more, North and South America"
+ },
+ "index": "land/rivers/index.json",
+ "version": "012987d776c7",
+ "generated": "2026-10-20T11:27:02Z",
+ "citation": "Lehner, B., Roth, A., Huber, M., Anand, M., Thieme, M. (2022): A sharper look at the world's rivers and catchments. Eos 103, https://doi.org/10.1029/2022EO220167. Data: https://www.hydrosheds.org (CC BY 4.0); elevation from DLR's TanDEM-X",
+ "sourceKey": {
+  "north-america": {
+   "file": "north-america_RIV_1s_v2r0.gdb.zip",
+   "size": 3391450146,
+   "fileId": "4_z6d90ec0d54177d2670d40d12_f21033b79473babb1_d20260707_m093113_c000_v0001411_t0039_u01783416673063",
+   "uploaded": "1783416673063"
+  },
+  "south-america": {
+   "file": "south-america_RIV_1s_v2r0.gdb.zip",
+   "size": 1430637101,
+   "fileId": "4_z6d90ec0d54177d2670d40d12_f21033b79473bfc45_d20260707_m102524_c000_v0001402_t0003_u01783419924127",
+   "uploaded": "1783419924127"
+  }
+ },
+ "features": {
+  "total": 20990675,
+  "byContinent": {
+   "north-america": 11558529,
+   "south-america": 9432146
+  },
+  "byZoom": {
+   "2": 170,
+   "3": 173,
+   "4": 2122,
+   "5": 2289,
+   "6": 23741,
+   "7": 26148,
+   "8": 260005,
+   "9": 292539,
+   "10": 2759392,
+   "11": 24977982
+  }
+ },
+ "tiles": {
+  "count": 355490,
+  "bytes": 2934894792,
+  "byZoom": {
+   "2": 4,
+   "3": 10,
+   "4": 30,
+   "5": 86,
+   "6": 340,
+   "7": 1108,
+   "8": 4623,
+   "9": 16481,
+   "10": 67397,
+   "11": 265411
+  },
+  "largest": {
+   "bytes": 133255,
+   "tile": "6/21/36"
+  }
+ },
+ "controls": {
+  "north-america": {
+   "reaches": 11558529,
+   "outlets": 108641,
+   "bounds": [
+    -169.72083,
+    7.20778,
+    -52.63264,
+    83.12861
+   ],
+   "landmark": {
+    "name": "the Mississippi",
+    "uplandKm2": 3181270,
+    "at": [
+     -89.37,
+     28.98
+    ],
+    "order": 11
+   }
+  },
+  "south-america": {
+   "reaches": 9432146,
+   "outlets": 43755,
+   "bounds": [
+    -91.65833,
+    -55.96389,
+    -32.40792,
+    14.8775
+   ],
+   "landmark": {
+    "name": "the Amazon",
+    "uplandKm2": 5946076,
+    "at": [
+     -49.99,
+     -0.12
+    ],
+    "order": 11
+   }
+  }
+ },
+ "groups": {
+  "na-low": {
+   "seconds": 340,
+   "peakMB": 6233.7,
+   "tiles": 17788
+  },
+  "na-west": {
+   "seconds": 1531,
+   "peakMB": 1763.2,
+   "tiles": 86651
+  },
+  "na-12": {
+   "seconds": 1528,
+   "peakMB": 1850.4,
+   "tiles": 41095
+  },
+  "na-14": {
+   "seconds": 997,
+   "peakMB": 1772.1,
+   "tiles": 43148
+  },
+  "na-east": {
+   "seconds": 1728,
+   "peakMB": 1632.0,
+   "tiles": 91666
+  },
+  "sa-low": {
+   "seconds": 235,
+   "peakMB": 4744.6,
+   "tiles": 4904
+  },
+  "sa-west": {
+   "seconds": 1045,
+   "peakMB": 1942.2,
+   "tiles": 23364
+  },
+  "sa-20": {
+   "seconds": 835,
+   "peakMB": 2014.4,
+   "tiles": 25214
+  },
+  "sa-east": {
+   "seconds": 1602,
+   "peakMB": 1907.9,
+   "tiles": 21678
+  }
+ }
+}
