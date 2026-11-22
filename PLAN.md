@@ -1,7 +1,7 @@
 # water-data-repo: the founding plan and running record
 
 The world's **lakes** and the Americas' **rivers**, as vector tiles. Created on GitHub by the owner and given its documents by the site's
-`pipeline/scaffold/new-origin.py`. **Nothing is published yet.**
+`pipeline/scaffold/new-origin.py`. **Publishing since 2026-10-20**, its check daily.
 
 ## What it is for
 

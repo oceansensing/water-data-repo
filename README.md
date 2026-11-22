@@ -10,8 +10,11 @@ got wrong and the shared doc doctrine.
 
 Two products, each a pyramid of Mapbox vector tiles (uncompressed, extent 4096, Web Mercator, the XYZ scheme) with an index naming every tile to zoom 8 and a root naming its version, R2's alone: **`lakes`** (`lakes.json`, `map/land/lakes/`), zooms 2 to 10, one polygon layer `lakes` — HydroLAKES v1.0's 1,427,688 lakes and reservoirs of 10 ha and more, each with its id, name (where it has one), type (lake, reservoir, controlled lake), area, mean depth, volume, surface elevation and country, the low zooms thinned to the largest lakes (1,000 km² and more at zooms 2-3, 100 at 4-5, 10 at 6-7, every lake from 8); and **`rivers`** (`rivers.json`, `map/land/rivers/`), zooms 2 to 11, one line layer `rivers` — HydroSHEDS v2's streams of North and South America, every stream draining 1 km² and more, each with its reach's id, Strahler order and upstream area, the low zooms thinned by upstream area (100,000 km² and more at zooms 2-3, 10,000 at 4-5, 1,000 at 6-7, 100 at 8-9, 10 at 10, every stream at 11) and drawn there as rivers between their own confluences. A set's version is its tiles' own hash, so an unchanged rebuild publishes nothing new.
 
-These products are published **operationally but not drawn on the website's map**; the map's status
-line still reports them when they fall behind, which is how their health stays visible.
+These products are published **operationally but not drawn on the
+website's map**. R2 alone carries them, so this repository's Pages status names none of
+them: the map's status line and the site's watchdog see only whether the
+origin publishes. Their fates are in the status on R2 and on the
+`published` branch.
 
 ## Where the data comes from
 
@@ -25,9 +28,9 @@ run time. This repository carries `pipeline/products.toml` and its publish
 workflow, and nothing else executable. Each run publishes to GitHub Pages and
 to Cloudflare R2 from one build. Related repositories: none it depends on.
 
-**Which document gets what, and what "update docs" means across all
-thirty-two repositories, is the doctrine block at the top of `CLAUDE.md`**: the
-same text in all thirty-two, held equal by the site's `check:docs`.
+**Which document gets what, and what "update docs" means across every
+repository of this project, is the doctrine block at the top of `CLAUDE.md`**: the
+same text in each, held equal by the site's `check:docs`.
 
 ## Structure
 
