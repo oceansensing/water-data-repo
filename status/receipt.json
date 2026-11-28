@@ -1,0 +1,19 @@
+{
+ "schema": 1,
+ "generated": "2026-11-28T08:38:26Z",
+ "mode": "full",
+ "fates": {
+  "lakes": "carried",
+  "rivers": "carried"
+ },
+ "reasons": {
+  "lakes": "not due: checked 192.0 h ago, runs every 720 h",
+  "rivers": "not due: checked 192.0 h ago, runs every 720 h"
+ },
+ "built": {},
+ "withheld": {},
+ "deploy": true,
+ "notes": [],
+ "behind": [],
+ "tile_keys": {}
+}
